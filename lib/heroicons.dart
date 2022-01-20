@@ -33,7 +33,7 @@ class HeroIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final iconTheme = IconTheme.of(context);
-    final double iconSize = size ?? iconTheme.size;
+    final double? iconSize = size ?? iconTheme.size;
 
     final path = p.join(
       'packages/heroicons/assets/${solid ? 'solid' : 'outline'}/',
