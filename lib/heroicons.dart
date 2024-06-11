@@ -32,7 +32,9 @@ class HeroIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = this.size ?? IconTheme.of(context).size ?? 24.0;
+    final iconTheme = IconTheme.of(context);
+    final iconSize = this.size ?? iconTheme.size ?? 24.0;
+    final iconColor = this.color ?? iconTheme.color;
 
     final path = p.join(
       'packages/heroicons/assets/${solid ? 'solid' : 'outline'}/',
@@ -41,9 +43,9 @@ class HeroIcon extends StatelessWidget {
 
     return SvgPicture.asset(
       '$path.svg',
-      color: color ?? iconTheme.color,
-      width: size,
-      height: size,
+      color: iconColor,
+      width: iconSize,
+      height: iconSize,
       alignment: Alignment.center,
     );
   }
